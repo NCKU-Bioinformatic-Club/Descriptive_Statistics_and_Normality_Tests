@@ -25,10 +25,15 @@ library("graphics")
 mosaicplot(dt, shade = TRUE, las=2,
            main = "housetasks")
 
+# Standardized residual 標準化殘差（也稱為Pearson 殘差）的平均數為0，標準差為1。 是以模型離差為基礎的殘差。
+# Blue color indicates that the observed value is higher than the expected value if the data were random
+# Red color specifies that the observed value is lower than the expected value if the data were random
+
 # install.packages("vcd")
 library("vcd")
 # plot just a subset of the table
 assoc(head(dt, 5), shade = TRUE, las=3)
+assoc(head(dt, 13), shade = TRUE, las=3)
 
 #### Compute chi-square test in R ####
 chisq <- chisq.test(housetasks)
