@@ -1,6 +1,10 @@
 ## Basic Statistical Analysis
 ## Ref: https://hackmd.io/@mutolisp/H1O00yGjZ/https%3A%2F%2Fhackmd.io%2Fs%2FSyowFbuAb
 
+##### Presetting ######
+rm(list = ls()) # Clean variable
+memory.limit(150000)
+
 #### Use iris example #####
 View(iris)
 

@@ -1,6 +1,10 @@
 ## Chi-Square Test of Independence in R
 ## Ref: http://www.sthda.com/english/wiki/chi-square-test-of-independence-in-r
 
+##### Presetting ######
+rm(list = ls()) # Clean variable
+memory.limit(150000)
+
 #### Data format: Contingency tables ####
 # Import the data
 file_path <- "http://www.sthda.com/sthda/RDoc/data/housetasks.txt"
