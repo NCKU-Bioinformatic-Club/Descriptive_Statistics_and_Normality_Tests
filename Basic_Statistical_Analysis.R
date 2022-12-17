@@ -13,9 +13,9 @@ mean(iris$Sepal.Width)
 sd(iris$Sepal.Width)
 
 #### aggregate ####
-aggregate(iris$Petal.Length, by = list(iris$Species), FUN = mean)
-aggregate(Petal.Length ~ Species, data = iris, FUN = mean)
-aggregate(. ~ Species, data = iris, mean)
+aggregate(iris$Petal.Length, by = list(iris$Species), FUN = mean) # aggregate(需計算的資料變項, 依據的變項, 函數)
+aggregate(Petal.Length ~ Species, data = iris, FUN = mean) # aggregate(表示式, 資料集, 函數) # 應變數~自變數 ex: y = ax + b 中y為應變數,x為自變數
+aggregate(. ~ Species, data = iris, mean) # 計算所有變項的平均，使用點(.) 來代表s
 
 ## Fun
 customLog <- function(x)
@@ -36,12 +36,16 @@ library(tidyverse)
 
 iris.dt <- data.table(iris)
 
-setkey(iris.dt, Species)
+setkey(iris.dt, Species) # The table is changed by reference and is therefore very memory efficient.
 iris.dt[, mean(Petal.Width), by = Species]
 
 #### Data filtering ####
-subset(iris, Petal.Length >=2.0)
-
+subset(iris, Petal.Length >= 2.0)
+subset(iris, Petal.Length >= Sepal.Length/2)
+subset(iris, Petal.Length + Sepal.Length > 10)
+subset(iris, Species == "versicolor")
+subset(iris, Species != "versicolor")
+subset(iris, Species %in% c("versicolor","virginica"))
 
 #### T-test ####
 iris_sv <- iris.dt[iris.dt[, Species == 'setosa' | Species == 'virginica']]
