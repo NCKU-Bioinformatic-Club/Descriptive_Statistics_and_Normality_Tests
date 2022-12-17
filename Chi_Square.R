@@ -54,8 +54,8 @@ round(contrib, 3)
 # Visualize the contribution
 corrplot(contrib, is.cor = FALSE)
 
-# printing the p-value
-chisq$p.value
-# printing the mean
-chisq$estimate
-
+# # printing the p-value
+# chisq$p.value
+# # printing the mean
+# chisq$estimate
+#
